@@ -63,7 +63,7 @@
     --space-v-10: calc(var(--space-v) * 10);
     --space-h-10: calc(var(--space-h) * 10);
 
-    /* z-index — backdrop < dropdown < dialog < toast */
+    /* z-index for in-document layers. Modal dialogs ignore this and use the top layer; toasts join it via popover. */
     --z-dialog-backdrop: 1;
     --z-dialog: 2;
     --z-dropdown: 3;
