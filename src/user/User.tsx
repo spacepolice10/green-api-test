@@ -17,11 +17,11 @@ export function User() {
   const { data, isLoading } = useGetAccountSettings()
   const label = accountLabel(data)
   const initial = (label.replace(/^@/, "").slice(0, 1) || "U").toUpperCase()
-  const { data: settings } = useGetSettings()
+  const { data: settings, isLoading: settingsLoading } = useGetSettings()
   const enabled = settings?.incomingWebhook === "yes" && !settings.webhookUrl
   return (
     <>
-    {!enabled && <p className="text-sm text-danger bg-danger/10 border-danger/20 border rounded-md p-2 mb-2 text-center gap-4 flex items-center justify-center"><span className="text-xl">{enabled ? "🟢" : "🔴"}</span>   {enabled ? "Входящие включены" : "Входящие выключены"}</p>}
+    {!enabled && !settingsLoading && <p className="text-sm text-danger bg-danger/10 border-danger/20 border rounded-md p-2 mb-2 text-center gap-4 flex items-center justify-center"><span className="text-xl">{enabled ? "🟢" : "🔴"}</span>   {enabled ? "Входящие включены" : "Входящие выключены"}</p>}
       <button
         type="button"
         aria-haspopup="dialog"
