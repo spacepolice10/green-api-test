@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GREEN-API чат — сопроводительное письмо</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M6 2h20a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H9l-7 4V6a4 4 0 0 1 4-4z' fill='%23BFFE96'/%3E%3C/svg%3E"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Палитра из src/stylesheet/variables.css -->
+    <style type="text/tailwindcss">
+      @theme {
+        --color-*: initial;
+
+        --color-prim: light-dark(oklch(0.985 0 0), oklch(0.085 0 0));
+        --color-second: light-dark(oklch(0.96 0 0), oklch(0.16 0 0));
+        --color-tertiary: light-dark(oklch(0.93 0 0), oklch(0.22 0 0));
+        --color-quaternary: light-dark(oklch(0.88 0 0), oklch(0.28 0 0));
+
+        --color-lime: light-dark(oklch(0.931 0.148 134), oklch(0.4 0.1 134));
+        --color-yellow: light-dark(
+          oklch(0.971 0.145 111.3),
+          oklch(0.4 0.08 111.3)
+        );
+        --color-mint: light-dark(
+          oklch(0.921 0.058 218.2),
+          oklch(0.4 0.06 218.2)
+        );
+        --color-peach: light-dark(oklch(0.94 0.025 40), oklch(0.26 0.035 40));
+
+        --color-invert-1: light-dark(oklch(0.085 0 0), oklch(0.985 0 0));
+        --color-invert-2: light-dark(oklch(0.371 0 0), oklch(0.7 0 0));
+        --color-invert-3: light-dark(oklch(0.5 0 0), oklch(0.57 0 0));
+        --color-invert-4: light-dark(oklch(0.62 0 0), oklch(0.45 0 0));
+        --color-invert-lime: light-dark(
+          oklch(0.28 0.08 134),
+          oklch(0.93 0.12 134)
+        );
+        --color-invert-yellow: light-dark(
+          oklch(0.28 0.06 111.3),
+          oklch(0.93 0.12 111.3)
+        );
+        --color-invert-peach: light-dark(
+          oklch(0.55 0.1 40),
+          oklch(0.78 0.07 40)
+        );
+
+        --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+        --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+
+      @layer base {
+        :root {
+          color-scheme: light dark;
+        }
+        body {
+          @apply bg-prim text-invert-1 font-sans leading-relaxed antialiased;
+        }
+        h1,
+        h2,
+        h3 {
+          @apply leading-tight font-extrabold tracking-tight text-balance;
+        }
+        p {
+          @apply text-pretty;
+        }
+        code {
+          @apply bg-tertiary rounded px-1.5 py-0.5 font-mono text-[0.85em];
+        }
+      }
+
+      @layer components {
+        .btn {
+          @apply bg-invert-1 text-prim hover:bg-invert-2 inline-flex items-center gap-2 rounded-2xl px-4 py-2 text-sm font-bold whitespace-nowrap transition-colors;
+        }
+        .btn-ghost {
+          @apply text-invert-1 border-quaternary hover:bg-second border bg-transparent;
+        }
+        .card {
+          @apply border-quaternary rounded-2xl border p-5;
+        }
+        .card h3 {
+          @apply text-lg font-bold;
+        }
+        .card p {
+          @apply text-invert-2 mt-2 text-[0.95rem];
+        }
+        .label {
+          @apply text-invert-3 mb-3 text-xs font-bold tracking-widest uppercase;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mx-auto max-w-4xl">
+      <header
+        class="border-quaternary bg-prim/75 sticky top-3 z-10 mx-3 mt-3 flex items-center gap-4 rounded-2xl border py-2.5 pr-2.5 pl-3 shadow-lg shadow-invert-1/5 backdrop-blur-md backdrop-saturate-150"
+      >
+        <span
+          class="bg-lime text-invert-lime grid size-8 place-items-center rounded-[10px_10px_10px_3px] font-extrabold"
+          >G</span
+        >
+        <span class="font-extrabold tracking-tight">GREEN-API чат</span>
+        <nav class="ml-auto flex gap-2">
+          <a
+            class="btn btn-ghost"
+            href="https://github.com/spacepolice10/green-api-test"
+            target="_blank"
+            rel="noopener"
+            >GitHub</a
+          >
+          <a
+            class="btn"
+            href="https://testgreenapi.netlify.app/"
+            target="_blank"
+            rel="noopener"
+            >Деплой ↗</a
+          >
+        </nav>
+      </header>
+
+      <main class="px-5">
+        <section class="py-15">
+          <h1 class="text-2xl">
+            Привет, я Влад<span class="text-xs text-lime"> (имир)</span>
+ 
+          </h1>
+          <p class="text-invert-2 mt-6 max-w-2xl text-xl">
+            И это небольшое сопроводительное HTML-письмо к тестовому по разработке мини-клиента для <mark class="bg-lime font-bold text-invert-1 shadow-sm rounded-md px-2"
+              >GREEN&#8209;API</mark
+            > с необходимыми
+            ссылками и деталями, которые я считаю важным отметить.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a
+              class="btn px-5 py-2.5 text-base"
+              href="https://testgreenapi.netlify.app/"
+              target="_blank"
+              rel="noopener"
+              >Открыть деплой ↗</a
+            >
+            <a
+              class="btn btn-ghost px-5 py-2.5 text-base"
+              href="https://github.com/spacepolice10/green-api-test"
+              target="_blank"
+              rel="noopener"
+              >Исходный код на GitHub</a
+            >
+          </div>
+        </section>
+
+        <section class="py-2" id="deps">
+          <h2 class="text-3xl">Зависимости</h2>
+          <p class="text-invert-2 mt-3 max-w-2xl mb-5">
+            Так как условия по стеку помимо Реакта не устанавливались, я решил
+            взять базовый минимум, который упрощает процессы разработки, сборки
+            и внедрения нужных функций.
+          </p>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <article class="card">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3>React 19</h3>
+                <span class="text-invert-4 font-mono text-xs">^19.2</span>
+              </div>
+              <p>
+                React 19 очевидно, как единственное обозначенное в ТЗ условие.
+              </p>
+            </article>
+            <article class="card">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3>TanStack Query 5</h3>
+                <span class="text-invert-4 font-mono text-xs">^5.103</span>
+              </div>
+              <p>
+                Де-факто, самый классный менеджер серверного состояния для
+                React. Помогает с кэшем, идемпотентностью запросов, состоянием
+                запросов, ошибок и т.д.
+              </p>
+            </article>
+            <article class="card">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3>React Router 7</h3>
+                <span class="text-invert-4 font-mono text-xs">^7.18</span>
+              </div>
+              <p>
+                Маршруты <code>/auth</code>, <code>/chats/new</code>,
+                <code>/chats/:chatId</code>. Упрощает разделение интерфейса на
+                секции без необходимости содержать сложные состояния и
+                использовать глобальные стейт-менеджеры типа Zustand.
+              </p>
+            </article>
+            <article class="card">
+              <div class="flex items-baseline justify-between gap-3">
+                <h3>libphonenumber-js</h3>
+                <span class="text-invert-4 font-mono text-xs">^1.13</span>
+              </div>
+              <p>
+                Разбор и проверка номеров, чтобы не ломать мозг на тему отправки
+                корректных данных. Используется облегчённая сборка
+                <code>/min</code>, и грузится она лениво, только при создании
+                чата.
+              </p>
+            </article>
+          </div>
+
+          <div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <article class="card bg-mint/50 border-transparent">
+              <h3>Vite 8 + TypeScript 6</h3>
+              <p>Быстрый dev-сервер и строгая типизация ответов API.</p>
+            </article>
+            <article class="card bg-mint/50 border-transparent">
+              <h3>Tailwind CSS 4</h3>
+              <p>
+                Утилиты поверх собственных CSS-переменных. Светлая и тёмная темы
+                через <code>light-dark()</code>. Чисто для удобства.
+                Идеологической привязанности к Tailwind нет 😄.
+              </p>
+            </article>
+            <article class="card bg-mint/50 border-transparent">
+              <h3>MSW 2</h3>
+              <p>
+                Мок-режим <code>npm run dev:mock</code>: готовые контакты и
+                автоответы, реальный инстанс не нужен. Так проще было собирать
+                UI, не дёргая без конца сервер. Ну и для тест-ранов подходит
+                отлично.
+              </p>
+            </article>
+            <article class="card bg-yellow/50 border-transparent">
+              <h3>Vitest 5</h3>
+              <p>Популярный и достаточный для базовых тестов.</p>
+            </article>
+            <article class="card bg-yellow/50 border-transparent">
+              <h3>oxlint + Prettier</h3>
+              <p>Oxlint идёт теперь в комплекте со свежими версиями Vite.</p>
+            </article>
+            <article class="card bg-yellow/50 border-transparent">
+              <h3>Netlify</h3>
+              <p>
+                Сборка и хостинг статики, SPA-редирект всех путей на
+                <code>index.html</code>. Исключительно для демонстрации
+                клиентской версии приложения.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="py-10" id="decisions">
+          <h2 class="text-3xl">Решения</h2>
+          <article class="mt-8 grid items-start gap-6 md:grid-cols-2 md:gap-10">
+            <div>
+              <h3 class="text-xl font-bold">Оптимистичные апдейты</h3>
+              <p class="text-invert-2 mt-3">
+                Стандартный UX-приём, без которого чаты уже не воспринимаются
+                нормально. Люди попросту ожидают моментальной реакции и это
+                нормально. TanStack упрощает реализацию таких вещей.
+              </p>
+            </div>
+            <div class="card">
+              <ol class="grid gap-4">
+                <li class="flex gap-3">
+                  <span
+                    class="bg-tertiary grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold"
+                    >1</span
+                  >
+                  <div>
+                    <b>onMutate</b>
+                    <p class="text-invert-3 text-sm">
+                      Отменяем текущие запросы истории, запоминаем снимок кэша,
+                      добавляем временное сообщение
+                    </p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span
+                    class="bg-yellow text-invert-yellow grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold"
+                    >2</span
+                  >
+                  <div>
+                    <b>Запрос sendMessage</b>
+                    <p class="text-invert-3 text-sm">
+                      Сообщение видно сразу, а сеть работает в фоне
+                    </p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span
+                    class="bg-lime text-invert-lime grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold"
+                    >3</span
+                  >
+                  <div>
+                    <b>onSuccess</b>
+                    <p class="text-invert-3 text-sm">
+                      Меняем временное сообщение на настоящее со статусом
+                      <code>sent</code>
+                    </p>
+                  </div>
+                </li>
+                <li class="flex gap-3">
+                  <span
+                    class="bg-peach text-invert-peach grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold"
+                    >4</span
+                  >
+                  <div>
+                    <b>onError</b>
+                    <p class="text-invert-3 text-sm">
+                      Возвращаем сохранённый снимок, интерфейс снова совпадает с
+                      сервером
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+          </article>
+
+          <article
+            class="mt-14 grid items-start gap-6 md:grid-cols-2 md:gap-10"
+          >
+            <div>
+              <h3 class="text-xl font-bold">Кэширование</h3>
+              <p class="text-invert-2 mt-3">
+                TanStack помогает локализовать данные и обновлять их частично,
+                когда приходит новая информация, и в критически значимых местах
+                рефетчить их целиком, не ломая UI и не заставляя без конца
+                глазеть на спиннеры.
+              </p>
+            </div>
+            <div class="card">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr
+                    class="text-invert-3 text-left text-xs tracking-wider uppercase"
+                  >
+                    <th class="pb-2 font-bold">Данные</th>
+                    <th class="pb-2 font-bold">Свежие</th>
+                    <th class="pb-2 font-bold">В памяти</th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="[&_td]:border-tertiary [&_td:not(:first-child)]:text-invert-2 [&_td]:border-t [&_td]:py-2 [&_td:first-child]:font-semibold [&_td:not(:first-child)]:font-mono"
+                >
+                  <tr>
+                    <td>История чата</td>
+                    <td>0</td>
+                    <td>24 ч</td>
+                  </tr>
+                  <tr>
+                    <td>Журнал для превью</td>
+                    <td>5 мин</td>
+                    <td>24 ч</td>
+                  </tr>
+                  <tr>
+                    <td>Аватары</td>
+                    <td>30 мин</td>
+                    <td>5 мин</td>
+                  </tr>
+                  <tr>
+                    <td>Уведомления</td>
+                    <td>0</td>
+                    <td>0</td>
+                  </tr>
+                </tbody>
+              </table>
+              <p class="text-invert-3 mt-4 text-sm">
+                Уведомления из GREEN-API триггерят ручной процессинг сообщений и
+                подстановку данных в кэш.
+              </p>
+            </div>
+          </article>
+        </section>
+
+        <section class="py-10" id="next">
+          <h2 class="text-3xl">Что можно сделать лучше</h2>
+          <p class="text-invert-2 mt-3 max-w-2xl">
+            Приложение целиком клиентское. Для тестового это нормальный
+            компромисс, но он упирается в три вещи, и все три закрывает
+            небольшой сервер.
+          </p>
+
+          <div class="mt-8 grid gap-4 md:grid-cols-3">
+            <article class="card bg-lime/40 border-transparent">
+              <h3>Hono-сервер для вебхуков</h3>
+              <p>
+                Сейчас каждая вкладка опрашивает очередь уведомлений через long
+                polling, и вкладки конкурируют за одни и те же уведомления. С
+                сервером GREEN-API сам шлёт вебхук, а сервер раздаёт событие
+                всем вкладкам через SSE.
+              </p>
+            </article>
+            <article class="card bg-lime/40 border-transparent">
+              <h3>Сервер для сессий</h3>
+              <p>
+                <code>apiTokenInstance</code> лежит в
+                <code>localStorage</code> и доступен любому скрипту на странице.
+                Правильнее держать токен на сервере, а браузеру выдавать
+                httpOnly-cookie и проксировать запросы.
+              </p>
+            </article>
+            <article class="card bg-lime/40 border-transparent">
+              <h3>Статус прочтения в SQLite</h3>
+              <p>
+                GREEN-API не отдаёт счётчики непрочитанных. Хватит компактной
+                таблицы «чат → время последнего прочтения», чтобы показывать
+                бейджи и синхронизировать их между устройствами.
+              </p>
+            </article>
+          </div>
+
+          <ul
+            class="text-invert-2 mt-5 marker:text-invert-4 grid list-disc gap-2 pl-5"
+          >
+            <li>Медиа и файлы: сейчас в чате отображается только текст.</li>
+            <li>Подгрузка старых сообщений при прокрутке вверх.</li>
+            <li>
+              Кнопка «Повторить» для неотправленного сообщения вместо отката.
+            </li>
+            <li>E2E-тесты на Playwright поверх тех же MSW-моков.</li>
+          </ul>
+        </section>
+      </main>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import "./variables.css";
+@import "./icon.css";
+@import "./hint.css";
+@import "tailwindcss";
+
+@theme inline {
+  --color-*: initial;
+
+  --color-prim: var(--swatch-prim);
+  --color-second: var(--swatch-second);
+  --color-tertiary: var(--swatch-tertiary);
+  --color-quaternary: var(--swatch-quaternary);
+
+  --color-lime: var(--swatch-lime);
+  --color-yellow: var(--swatch-yellow);
+  --color-mint: var(--swatch-mint);
+  --color-violet: var(--swatch-violet);
+  --color-amber: var(--swatch-amber);
+  --color-danger: var(--swatch-danger);
+  --color-peach: var(--swatch-peach);
+
+  --color-invert-1: var(--swatch-invert-1);
+  --color-invert-2: var(--swatch-invert-2);
+  --color-invert-3: var(--swatch-invert-3);
+  --color-invert-4: var(--swatch-invert-4);
+  --color-invert-lime: var(--swatch-invert-lime);
+  --color-invert-yellow: var(--swatch-invert-yellow);
+  --color-invert-mint: var(--swatch-invert-mint);
+  --color-invert-violet: var(--swatch-invert-violet);
+  --color-invert-peach: var(--swatch-invert-peach);
+  --color-transparent: var(--swatch-transparent);
+
+  --font-sans: var(--font-family-sans);
+  --font-mono: var(--font-family-mono);
+
+  --spacing-h: var(--space-h);
+  --spacing-h-half: var(--space-h-half);
+  --spacing-v: var(--space-v);
+  --spacing-v-half: var(--space-v-half);
+
+  --radius-1: var(--radius-step-1);
+  --radius-2: var(--radius-step-2);
+  --radius-3: var(--radius-step-3);
+  --radius-4: var(--radius-step-4);
+}
+
+@layer base {
+  body {
+    @apply bg-prim text-invert-1 font-sans;
+  }
+
+  main {
+    @apply flex h-dvh flex-col overflow-hidden;
+  }
+
+  button {
+    @apply bg-invert-1 px-h py-v-half text-prim hover:bg-invert-2 active:bg-invert-3 focus:outline-invert-1 w-fit cursor-pointer gap-2 rounded-2xl border-0 font-bold focus:outline focus:outline-1 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}

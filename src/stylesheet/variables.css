@@ -1,0 +1,104 @@
+@layer variables {
+  :root {
+    color-scheme: light dark;
+
+    /* surfaces — #FAFAFA / #020202 */
+    --swatch-prim: light-dark(oklch(0.985 0 0), oklch(0.085 0 0));
+    --swatch-second: light-dark(oklch(0.96 0 0), oklch(0.16 0 0));
+    --swatch-tertiary: light-dark(oklch(0.93 0 0), oklch(0.22 0 0));
+    --swatch-quaternary: light-dark(oklch(0.88 0 0), oklch(0.28 0 0));
+
+    /* brand — #BFFE96, #F9FF86, #BAEFFF, violet accent */
+    --swatch-lime: light-dark(oklch(0.931 0.148 134), oklch(0.4 0.1 134));
+    --swatch-yellow: light-dark(oklch(0.971 0.145 111.3), oklch(0.4 0.08 111.3));
+    --swatch-mint: light-dark(oklch(0.921 0.058 218.2), oklch(0.4 0.06 218.2));
+    --swatch-violet: light-dark(oklch(0.78 0.1 295), oklch(0.42 0.09 295));
+    --swatch-invert-violet: light-dark(
+      oklch(0.32 0.08 295),
+      oklch(0.9 0.06 295)
+    );
+    --swatch-amber: light-dark(oklch(0.78 0.16 70), oklch(0.82 0.14 70));
+    --swatch-danger: light-dark(oklch(0.55 0.2 25), oklch(0.72 0.16 25));
+    --swatch-peach: light-dark(oklch(0.94 0.025 40), oklch(0.26 0.035 40));
+    --swatch-invert-peach: light-dark(oklch(0.55 0.1 40), oklch(0.78 0.07 40));
+    --swatch-transparent: transparent;
+
+    /* ink — 1 strongest … 4 most muted; #020202, #404040 */
+    --swatch-invert-1: light-dark(oklch(0.085 0 0), oklch(0.985 0 0));
+    --swatch-invert-2: light-dark(oklch(0.371 0 0), oklch(0.7 0 0));
+    --swatch-invert-3: light-dark(oklch(0.5 0 0), oklch(0.57 0 0));
+    --swatch-invert-4: light-dark(oklch(0.62 0 0), oklch(0.45 0 0));
+
+    --swatch-invert-lime: light-dark(oklch(0.28 0.08 134), oklch(0.93 0.12 134));
+    --swatch-invert-yellow: light-dark(
+      oklch(0.28 0.06 111.3),
+      oklch(0.93 0.12 111.3)
+    );
+    --swatch-invert-mint: light-dark(
+      oklch(0.28 0.05 218.2),
+      oklch(0.93 0.05 218.2)
+    );
+
+    /* spacing */
+    --space-v: 1.25ch;
+    --space-h: 1rem;
+    --space-v-half: calc(var(--space-v) / 2);
+    --space-h-half: calc(var(--space-h) / 2);
+    --space-v-2: calc(var(--space-v) * 2);
+    --space-h-2: calc(var(--space-h) * 2);
+    --space-v-3: calc(var(--space-v) * 3);
+    --space-h-3: calc(var(--space-h) * 3);
+    --space-v-4: calc(var(--space-v) * 4);
+    --space-h-4: calc(var(--space-h) * 4);
+    --space-v-5: calc(var(--space-v) * 5);
+    --space-h-5: calc(var(--space-h) * 5);
+    --space-v-6: calc(var(--space-v) * 6);
+    --space-h-6: calc(var(--space-h) * 6);
+    --space-v-7: calc(var(--space-v) * 7);
+    --space-h-7: calc(var(--space-h) * 7);
+    --space-v-8: calc(var(--space-v) * 8);
+    --space-h-8: calc(var(--space-h) * 8);
+    --space-v-9: calc(var(--space-v) * 9);
+    --space-h-9: calc(var(--space-h) * 9);
+    --space-v-10: calc(var(--space-v) * 10);
+    --space-h-10: calc(var(--space-h) * 10);
+
+    /* z-index — backdrop < dropdown < dialog < toast */
+    --z-dialog-backdrop: 1;
+    --z-dialog: 2;
+    --z-dropdown: 3;
+    --z-toasts: 4;
+
+    --font-family-sans:
+      "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+    --font-family-mono:
+      ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+    --font-size-2xl: clamp(1.6rem, 2vw + 0.5rem, 2.25rem);
+    --font-size-xl: clamp(1rem, 1.4vw + 0.24rem, 2rem);
+    --font-size-base-type: clamp(1rem, 1vw + 0.2rem, 1.2rem);
+    --font-size-base-read: clamp(0.8rem, 1.2vw + 0.12rem, 1rem);
+    --font-size-xs: clamp(0.66rem, 0.6vw + 0.48rem, 0.8rem);
+    --font-size-2xs: clamp(0.46rem, 0.4vw + 0.38rem, 0.66rem);
+
+    --font-weight-bold: 700;
+    --font-weight-medium: 600;
+
+    --opacity-100: 1;
+    --opacity-75: 0.75;
+    --opacity-50: 0.5;
+    --opacity-25: 0.25;
+
+    --border-subtle: 0.5px solid
+      color-mix(in oklch, var(--swatch-invert-4) 18%, transparent);
+    --border-strong: 1px solid
+      color-mix(in oklch, var(--swatch-invert-2) 45%, transparent);
+
+    --radius-none: 0px;
+    --radius-step-1: 2px;
+    --radius-step-2: 4px;
+    --radius-step-3: 8px;
+    --radius-step-4: 16px;
+    --radius-full: 9999px;
+  }
+}

@@ -1,0 +1,22 @@
+@layer base {
+  [interestfor] {
+    anchor-name: var(--hint-anchor);
+  }
+
+  [popover="hint"] {
+    position-anchor: var(--hint-anchor);
+    inset: unset;
+    top: anchor(bottom);
+    left: anchor(center);
+    translate: -50% var(--space-v-half);
+    margin: 0;
+    border: 0;
+    padding: var(--space-v-half) var(--space-h-half);
+    border-radius: var(--radius-2);
+    background: var(--color-invert-1);
+    color: var(--color-prim);
+    font-size: var(--font-size-xs);
+    font-weight: 400;
+    white-space: nowrap;
+  }
+}
